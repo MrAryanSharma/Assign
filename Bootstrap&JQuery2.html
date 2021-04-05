@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="Assignment_JQuery2.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("body").css("background-color", "white");
+            $("#btnAdd").click(function () {
+                var x = parseInt($("#number1").val());
+                var y = parseInt($("#number2").val());
+                $("#result").val(x + y);
+            });
+            $("#btnSub").click(function () {
+                var x = parseInt($("#number1").val());
+                var y = parseInt($("#number2").val());
+                $("#result").val(x - y);
+            });
+            $("#btntxt1").click(function () {
+                var x = ($("#text1").val());
+                var y = x.toLowerCase();
+                $("#result1").val(y);
+
+            });
+            $("#btntxt2").click(function () {
+                var x = ($("#text2").val());
+                var y = ($("#text3").val());
+                $("#res2").html("</br>Result is:<b>" + x + " " + y + "</b>");
+            });
+            $("#btnTab").click(function () {
+                var result = "";
+                var x = parseInt($("#number3").val());
+                for (var i = 1; i <= 10; i++) {
+                    result = result + "</br><b>" + x + "*" + i + "=" + x * i + "</b>";
+                }
+                $("#res").html(result);
+
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <div class="container p-3 my-3 bg-dark text-white">
+        <h4>Addition and Subtraction</h4>
+        <form class="form-inline">
+
+            <label for="number1">Number 1:</label>
+            <input type="number" id="number1" class="form-control" placeholder="Enter Number 1" name="number1">
+
+
+
+            <label for="number2">Number 2:</label>
+            <input type="number" id="number2" class="form-control" placeholder="Enter Number 2" name="number2">
+
+
+            <label for="result">Result:</label>
+            <input type="number" id="result" class="form-control" placeholder="Result" name="result">
+            <button type="button" class="btn btn-primary" id="btnAdd"> Add </button>
+            <button type="button" class="btn btn-info" id="btnSub"> Sub </button>
+        </form>
+    </div>
+    <div class="container p-3 my-3  bg-dark text-white">
+        <h4>Converting Lower Case</h4>
+        <div class="form-inline">
+            <label for="text1">Text:</label>
+            <input type="text" id="text1" class="form-control" placeholder="Enter text" name="text1">
+            <label for="result1">Result:</label>
+            <input type="text" id="result1" class="form-control" placeholder="Result" name="result1">
+            <button type="button" class="btn btn-info" id="btntxt1"> Enter </button>
+        </div>
+    </div>
+    <div class="container p-3 my-3 bg-dark text-white">
+        <h4>Concatenating strings</h4>
+        <div class="form-inline">
+            <label for="text2">Text1:</label>
+            <input type="text" id="text2" class="form-control" placeholder="Enter text1" name="text2">
+            <label for="text3">Text2:</label>
+            <input type="text" id="text3" class="form-control" placeholder="Enter text2" name="text3">
+            <button type="button" class="btn btn-info" id="btntxt2"> Enter </button>
+
+        </div>
+        <p id="res2"></p>
+    </div>
+    <div class="container p-3 my-3 bg-dark text-white">
+        <h4>Tables of Number</h4>
+        <div class="form-inline">
+            <label for="number3">Number:</label>
+            <input type="number" id="number3" class="form-control" placeholder="Enter number" name="number3">
+            <button type="button" class="btn btn-info" id="btnTab"> Enter </button>
+
+        </div>
+        <p id="res"></p>
+
+    </div>
+
+
+
+
+</body>
+</html>
